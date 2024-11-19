@@ -178,14 +178,14 @@ let targets: [CustomTarget] = [
   .target(
     kind: .testSupport,
     name: "_CollectionsTestSupport",
-    dependencies: ["InternalCollectionsUtilities"]),
+    dependencies: ["SortedCollectionsInternalCollectionsUtilities"]),
   // .target(
   //   kind: .test,
   //   name: "CollectionsTestSupportTests",
   //   dependencies: ["_CollectionsTestSupport"]),
   .target(
     kind: .hidden,
-    name: "InternalCollectionsUtilities",
+    name: "SortedCollectionsInternalCollectionsUtilities",
     exclude: [
       "CMakeLists.txt",
       "Compatibility/UnsafeMutableBufferPointer+SE-0370.swift.gyb",
@@ -272,7 +272,7 @@ let targets: [CustomTarget] = [
   .target(
     kind: .exported,
     name: "SortedCollections",
-    dependencies: ["InternalCollectionsUtilities"],
+    dependencies: ["SortedCollectionsInternalCollectionsUtilities"],
     directory: "SortedCollections"),
   .target(
     kind: .test,
