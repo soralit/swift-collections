@@ -296,23 +296,23 @@ let targets: [CustomTarget] = [
 
 var _products: [Product] = []
 var _targets: [Target] = []
-if defines.contains("COLLECTIONS_SINGLE_MODULE") {
-  _products = [
-    .library(name: "Collections", targets: ["Collections"]),
-  ]
-  _targets = [
-    targets.toMonolithicTarget(name: "Collections"),
-    targets.toMonolithicTestTarget(
-      name: "CollectionsTests",
-    dependencies: ["Collections"]),
-  ]
-} else {
+// if defines.contains("COLLECTIONS_SINGLE_MODULE") {
+//   _products = [
+//     .library(name: "Collections", targets: ["Collections"]),
+//   ]
+//   _targets = [
+//     targets.toMonolithicTarget(name: "Collections"),
+//     targets.toMonolithicTestTarget(
+//       name: "CollectionsTests",
+//     dependencies: ["Collections"]),
+//   ]
+// } else {
   _products = targets.compactMap { t in
     guard t.kind == .exported else { return nil }
     return .library(name: t.name, targets: [t.name])
   }
   _targets = targets.map { $0.toTarget() }
-}
+// }
 
 let package = Package(
   name: "swift-collections-sorted-collections",
