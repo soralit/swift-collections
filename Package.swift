@@ -179,10 +179,10 @@ let targets: [CustomTarget] = [
     kind: .testSupport,
     name: "_CollectionsTestSupport",
     dependencies: ["InternalCollectionsUtilities"]),
-  .target(
-    kind: .test,
-    name: "CollectionsTestSupportTests",
-    dependencies: ["_CollectionsTestSupport"]),
+  // .target(
+  //   kind: .test,
+  //   name: "CollectionsTestSupportTests",
+  //   dependencies: ["_CollectionsTestSupport"]),
   .target(
     kind: .hidden,
     name: "InternalCollectionsUtilities",
@@ -206,68 +206,68 @@ let targets: [CustomTarget] = [
       "UnsafeMutableBufferPointer+Extras.swift.gyb",
     ]),
 
-  .target(
-    kind: .exported,
-    name: "BitCollections",
-    dependencies: ["InternalCollectionsUtilities"],
-    exclude: ["CMakeLists.txt"]),
-  .target(
-    kind: .test,
-    name: "BitCollectionsTests",
-    dependencies: [
-      "BitCollections", "_CollectionsTestSupport", "OrderedCollections"
-    ]),
+  // .target(
+  //   kind: .exported,
+  //   name: "BitCollections",
+  //   dependencies: ["InternalCollectionsUtilities"],
+  //   exclude: ["CMakeLists.txt"]),
+  // .target(
+  //   kind: .test,
+  //   name: "BitCollectionsTests",
+  //   dependencies: [
+  //     "BitCollections", "_CollectionsTestSupport", "OrderedCollections"
+  //   ]),
 
-  .target(
-    kind: .exported,
-    name: "DequeModule",
-    dependencies: ["InternalCollectionsUtilities"],
-    exclude: ["CMakeLists.txt"]),
-  .target(
-    kind: .test,
-    name: "DequeTests",
-    dependencies: ["DequeModule", "_CollectionsTestSupport"]),
+  // .target(
+  //   kind: .exported,
+  //   name: "DequeModule",
+  //   dependencies: ["InternalCollectionsUtilities"],
+  //   exclude: ["CMakeLists.txt"]),
+  // .target(
+  //   kind: .test,
+  //   name: "DequeTests",
+  //   dependencies: ["DequeModule", "_CollectionsTestSupport"]),
 
-  .target(
-    kind: .exported,
-    name: "HashTreeCollections",
-    dependencies: ["InternalCollectionsUtilities"],
-    exclude: ["CMakeLists.txt"]),
-  .target(
-    kind: .test,
-    name: "HashTreeCollectionsTests",
-    dependencies: ["HashTreeCollections", "_CollectionsTestSupport"]),
+  // .target(
+  //   kind: .exported,
+  //   name: "HashTreeCollections",
+  //   dependencies: ["InternalCollectionsUtilities"],
+  //   exclude: ["CMakeLists.txt"]),
+  // .target(
+  //   kind: .test,
+  //   name: "HashTreeCollectionsTests",
+  //   dependencies: ["HashTreeCollections", "_CollectionsTestSupport"]),
 
-  .target(
-    kind: .exported,
-    name: "HeapModule",
-    dependencies: ["InternalCollectionsUtilities"],
-    exclude: ["CMakeLists.txt"]),
-  .target(
-    kind: .test,
-    name: "HeapTests",
-    dependencies: ["HeapModule", "_CollectionsTestSupport"]),
+  // .target(
+  //   kind: .exported,
+  //   name: "HeapModule",
+  //   dependencies: ["InternalCollectionsUtilities"],
+  //   exclude: ["CMakeLists.txt"]),
+  // .target(
+  //   kind: .test,
+  //   name: "HeapTests",
+  //   dependencies: ["HeapModule", "_CollectionsTestSupport"]),
 
-  .target(
-    kind: .exported,
-    name: "OrderedCollections",
-    dependencies: ["InternalCollectionsUtilities"],
-    exclude: ["CMakeLists.txt"]),
-  .target(
-    kind: .test,
-    name: "OrderedCollectionsTests",
-    dependencies: ["OrderedCollections", "_CollectionsTestSupport"]),
+  // .target(
+  //   kind: .exported,
+  //   name: "OrderedCollections",
+  //   dependencies: ["InternalCollectionsUtilities"],
+  //   exclude: ["CMakeLists.txt"]),
+  // .target(
+  //   kind: .test,
+  //   name: "OrderedCollectionsTests",
+  //   dependencies: ["OrderedCollections", "_CollectionsTestSupport"]),
 
-  .target(
-    kind: .exported,
-    name: "_RopeModule",
-    dependencies: ["InternalCollectionsUtilities"],
-    directory: "RopeModule",
-    exclude: ["CMakeLists.txt"]),
-  .target(
-    kind: .test,
-    name: "RopeModuleTests",
-    dependencies: ["_RopeModule", "_CollectionsTestSupport"]),
+  // .target(
+  //   kind: .exported,
+  //   name: "_RopeModule",
+  //   dependencies: ["InternalCollectionsUtilities"],
+  //   directory: "RopeModule",
+  //   exclude: ["CMakeLists.txt"]),
+  // .target(
+  //   kind: .test,
+  //   name: "RopeModuleTests",
+  //   dependencies: ["_RopeModule", "_CollectionsTestSupport"]),
 
   .target(
     kind: .exported,
@@ -279,19 +279,19 @@ let targets: [CustomTarget] = [
     name: "SortedCollectionsTests",
     dependencies: ["SortedCollections", "_CollectionsTestSupport"]),
 
-  .target(
-    kind: .exported,
-    name: "Collections",
-    dependencies: [
-      "BitCollections",
-      "DequeModule",
-      "HashTreeCollections",
-      "HeapModule",
-      "OrderedCollections",
-      "_RopeModule",
-      "SortedCollections",
-    ],
-    exclude: ["CMakeLists.txt"])
+  // .target(
+  //   kind: .exported,
+  //   name: "Collections",
+  //   dependencies: [
+  //     "BitCollections",
+  //     "DequeModule",
+  //     "HashTreeCollections",
+  //     "HeapModule",
+  //     "OrderedCollections",
+  //     "_RopeModule",
+  //     "SortedCollections",
+  //   ],
+  //   exclude: ["CMakeLists.txt"])
 ]
 
 var _products: [Product] = []
@@ -315,7 +315,7 @@ if defines.contains("COLLECTIONS_SINGLE_MODULE") {
 }
 
 let package = Package(
-  name: "swift-collections",
+  name: "swift-collections-sorted-collections",
   products: _products,
   targets: _targets
 )
